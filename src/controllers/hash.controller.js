@@ -15,16 +15,20 @@ export const getHashDB = async () => {
 };
 
 
-//opcional para rutas http
+//solo hash
 export const getHash = async (req, res) => {
     try {
-        const hash = await getHashFromDB();
+        const hash = await getHashDB();
         if (hash) {
             res.json({ hash });
         } else {
             res.status(404).json({ message: 'Hash no encontrado' });
         }
     } catch (error) {
-        res.status(500).json({ message: 'Error en el servidor' });
+        console.error('Error en getHash:', error.message); 
+        res.status(500).json({ 
+            message: 'Error en el servidor',
+            error: error.message
+        });
     }
 };
