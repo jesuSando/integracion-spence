@@ -5,7 +5,11 @@
   "type": "module",
   "main": "src/app.js",
   "scripts": {
-    "dev": "nodemon --exec node src/app.js"
+    "dev": "nodemon --exec node src/app.js",
+    "simulador85": "node src/loops/loopSimulador85.js",
+    "frenado": "node src/loops/loopSimuladorFrenado.js",
+    "frenado2": "node src/loops/loopSimuladorFrenado2.js",
+    "loop": "node src/loops/loopPrincipal.js"
   },
   "keywords": [],
   "author": "",
